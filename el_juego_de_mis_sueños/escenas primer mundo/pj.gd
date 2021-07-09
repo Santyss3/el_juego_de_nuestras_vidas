@@ -31,6 +31,17 @@ func _physics_process(delta):
 		animationPlayer.play("idle")
 		friction = true# reproducir animaciones y poner devuelta la friccion
  
+	if Input.is_action_pressed("shift"):
+		sprite.flip_h = true
+		animationPlayer.play("walk_shift")
+		motion.x = 500
+	elif Input.is_action_pressed("shift"):
+		animationPlayer.play("walk_shift")
+		sprite.flip_h = false
+		motion.x = 500
+	else:
+		animationPlayer.play("idle")
+		friction = true# reproducir animaciones y poner devuelta la friccion
 	if is_on_floor():# el salto
  
 		if Input.is_action_just_pressed("ui_accept"):
